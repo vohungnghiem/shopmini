@@ -1,0 +1,241 @@
+#header {
+    clear: both;
+    .header-top>div {
+        min-width: 200px;
+    }
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .phone {
+            a {
+                i {
+                    border-radius: 50px;
+                    background-color: $color-red;
+                    padding: 10px;
+                    color: $color-white;
+                }
+                font-size: 21px;
+                font-weight: 600;
+            }
+        }
+        .logo {
+            text-align: center;
+            img {
+                max-height: 100px;
+            }
+        }
+        .header-top-right {
+            display: inline-flex;
+            align-items: center;
+            .search-form {
+                position: relative;
+                input {
+                    width: 250px;
+                    border-radius: 30px;
+                    border: 1px dotted $color-gray;
+                    padding: 10px 10px;
+                }
+                button {
+                    position: absolute;
+                    background-color: $color-white;
+                    border: 0px;
+                    right: 5px;
+                    top: 10px;
+                    i {
+                        color: $color-green;
+                    }
+                }
+            }
+            .shop {
+                padding-left: 10px;
+                i {
+                    border-radius: 50px;
+                    background-color: $color-red;
+                    padding: 10px;
+                    color: $color-white;
+                }
+            }
+        }
+        
+    }
+    .nav-main {
+        min-height: 30px;
+        position: relative;
+        .submenu {
+            min-height: 0px;
+            height: 0px;
+            overflow: auto;
+            transition: min-height 1s;
+
+            top: 40px;
+            width: 280px;
+            position: absolute;
+            background-color: $color-white;
+            z-index: 1000;
+            
+            margin-bottom: 20px;
+            li {
+                list-style: none;
+                margin-left: -15px;
+                margin-bottom: 15px;
+                padding: 5px 0px;
+                a {
+                    font-size: 18x;
+                    
+                }
+                &:hover {
+                    a {
+                        color: $color-red;
+                    }
+                }
+            }
+        }    
+        .nav-btn:hover + .submenu
+        ,.submenu:hover 
+        {
+            min-height: 300px;    
+        }
+
+        .nav-btn {
+            float:left;
+            position: relative;
+           
+            padding: 10px 15px;
+            box-shadow: 0 0 4px 0 rgb(0 0 0 / 14%), 0 1px 1px 0 rgb(0 0 0 / 12%), 0 1px 3px 0 rgb(0 0 0 / 20%);
+            .dmsp {
+                font-weight: 500;
+                font-size: 13px;
+                min-width: 250px;
+                display: block;
+                i {
+                    font-size: 15px;
+                    padding-right: 5px;
+                }
+            }
+            &:hover{
+                pointer-events: all;
+                > .dmsp {
+                    color: $color-red;
+                }
+            }
+        }
+        .nav-menu {
+            float: right;
+            margin-bottom: 0px;
+            margin-top: 5px;
+            .item {
+                display: inline-block;
+                a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 10px 15px;
+                    &:last-child {
+                        padding-right: 0px;
+                    }
+                }
+               
+                &:hover {
+                    a {
+                        color: $color-red;
+                    }
+                    
+                }
+            }
+            .active {
+                a {
+                    color: $color-red;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #header {
+        .header-top {
+            display: block;
+            .phone {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                z-index: 10;
+                i {
+                    font-size: 30px;
+                }
+                span {
+                    display: none;
+                }
+            }
+            .logo {
+                float: left;
+                img {
+                    width: 70px;
+                }
+            }
+            .header-top-right {
+                float: right;
+                margin-top: 10px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                .search-form {
+                    input {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        .header-top > div {
+            min-width: 100px;
+        }
+        .nav-main {
+            
+            .submenu {
+                width: 100%;
+                position: fixed;
+                top: -1px;
+                left: 0px;
+                border: 1px solid $color-gray;
+                overflow: auto;
+                li {
+                    padding: 10px 10px;
+                }
+                .subleft {
+                    float: left;
+                    width: 50%;
+                }
+                .nav-menu-mobile {
+                    float: right;
+                    width: 50%;
+                }
+            }
+            .nav-btn {
+                clear: both;
+                padding: 5px;
+                margin-bottom: 15px;
+                width: 100%;
+                .dmsp {
+                    display: block;
+                    i {
+                        font-size: 22px;
+                    }
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .nav-menu {
+                display: none;
+                margin-top: 10px;
+                margin-left: -45px;
+            }
+        }
+    }
+    .container {
+        margin: 0px;
+        padding: 0px;
+    }
+    .row {
+        margin: 0px !important;
+    }
+}
